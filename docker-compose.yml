@@ -1,0 +1,24 @@
+version: '2.1'
+
+
+volumes:
+  volume_adguard_conf:
+  volume_adguard_work:
+
+services:
+  adguardhome:
+    build:
+        context: ./
+    volumes:
+      - volume_adguard_work:/opt/adguardhome/work
+      - volume_adguard_conf:/opt/adguardhome/conf
+    network_mode: host
+    #ports:
+    #  - "53:53/tcp"
+    #  - "53:53/udp"
+    #  - "67:67/udp"
+    #  - "68:68/tcp"
+    #  - "80:80/tcp"
+    #  - "443:443/tcp"
+    #  - "853:853/tcp"
+    #  - "3000:3000/tcp"
